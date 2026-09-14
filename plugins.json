@@ -1,21 +1,153 @@
 {
   "Schema": 1,
   "Name": "AEX Plugins Hub",
-  "UpdatedAt": "2026-09-12",
+  "UpdatedAt": "2026-09-14",
   "Notice": "Plugins run arbitrary Lua. Install only what you trust.",
   "Plugins": [
     {
-      "Id": "test",
-      "Name": "Test Plugin",
-      "Author": "Sasha",
+      "Id": "nsfw",
+      "Name": "NSFW",
+      "Author": "FoarteBine",
       "Version": "1.0.0",
-      "Category": "Example",
-      "Desc": "Minimal example plugin - prints Hello World and shows a notification.",
-      "File": "plugins/test.aex",
-      "SaveAs": "test.aex",
+      "Category": "Animation",
+      "Desc": "Sussy anims",
+      "File": "plugins/nsfw.aex",
+      "SaveAs": "nsfw.aex",
       "Icon": "",
-      "Accent": "#6366F1",
-      "Commands": ["test", "helloworld", "hubtest"]
+      "Accent": "#FF4081",
+      "Commands": [
+        "stopall",
+        "annoy",
+        "rape",
+        "rape2",
+        "rape3",
+        "rape4",
+        "getraped",
+        "getraped2",
+        "getraped3",
+        "getraped4",
+        "getraped5",
+        "getraped6",
+        "getraped7",
+        "getraped8",
+        "getraped9",
+        "getraped10",
+        "getraped11",
+        "getraped12",
+        "getraped13",
+        "slapass",
+        "blowjob",
+        "stalk",
+        "twerkass",
+        "twerkass2"
+      ]
+    },
+    {
+      "Id": "chatsound",
+      "Name": "chatsound",
+      "Author": "FoarteBine",
+      "Version": "1.0.0",
+      "Category": "Audio",
+      "Desc": "sound after each message",
+      "File": "plugins/chatsound.aex",
+      "SaveAs": "chatsound.aex",
+      "Icon": "",
+      "Accent": "#00E676",
+      "Commands": [
+        "chatsound",
+        "rchatsound"
+      ]
+    },
+    {
+      "Id": "interactable_esp",
+      "Name": "interactable objects esp",
+      "Author": "FoarteBine",
+      "Version": "1.0.0",
+      "Category": "Visuals",
+      "Desc": "cd = red, pp = green, ti = yellow, seat = light blue, unanchored = purple, no collision = brown, npc = gray",
+      "File": "plugins/interactable_esp.aex",
+      "SaveAs": "interactable_esp.aex",
+      "Icon": "",
+      "Accent": "#FF9800",
+      "Commands": [
+        "clickdetectoresp",
+        "proximityesp",
+        "touchinterestesp",
+        "seatesp",
+        "nocollisionesp",
+        "npcesp",
+        "unanchoredesp",
+        "unclickdetectoresp",
+        "unproximityesp",
+        "untouchinterestesp",
+        "unseatesp",
+        "unnocollisionesp",
+        "unnpcesp",
+        "removeallesp",
+        "nounanchoredesp"
+      ]
+    },
+    {
+      "Id": "momentum",
+      "Name": "MOMENTUM",
+      "Author": "atomic444",
+      "Version": "1.0.0",
+      "Category": "Movement",
+      "Desc": "Elite Movement System By atomic444 On Discord",
+      "File": "plugins/momentum.aex",
+      "SaveAs": "momentum.aex",
+      "Icon": "",
+      "Accent": "#3F51B5",
+      "Commands": [
+        "momentum",
+        "unmomentum"
+      ]
+    },
+    {
+      "Id": "nanfling",
+      "Name": "NaN Fling",
+      "Author": "FoarteBine",
+      "Version": "1.0.0",
+      "Category": "Troll",
+      "Desc": "Fling players using nan fling",
+      "File": "plugins/nanfling.aex",
+      "SaveAs": "nanfling.aex",
+      "Icon": "",
+      "Accent": "#E91E63",
+      "Commands": [
+        "nanfling"
+      ]
+    },
+    {
+      "Id": "player_collision",
+      "Name": "Player Collision 1000",
+      "Author": "hxerohero",
+      "Version": "1.0.0",
+      "Category": "Utility",
+      "Desc": "from @hxerohero",
+      "File": "plugins/player_collision.aex",
+      "SaveAs": "player_collision.aex",
+      "Icon": "",
+      "Accent": "#00BCD4",
+      "Commands": [
+        "playercollision",
+        "unplayercollision"
+      ]
+    },
+    {
+      "Id": "server_finder",
+      "Name": "Server Finder Deluxe",
+      "Author": "MaxproGlitcher",
+      "Version": "1.0.0",
+      "Category": "Server",
+      "Desc": "To have a better experience using IY to join public servers",
+      "File": "plugins/server_finder.aex",
+      "SaveAs": "server_finder.aex",
+      "Icon": "",
+      "Accent": "#9C27B0",
+      "Commands": [
+        "serverfinder"
+      ]
     }
   ]
 }
