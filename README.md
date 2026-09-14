@@ -1,14 +1,20 @@
 # AEX Plugins Hub
 
 Catalog of plugins for [AEX](https://github.com/FoarteBine/AEX) (Infinite Yield FE redesign).
-AEX opens this list in **Settings → Manage Plugins → Plugins Hub**.
+AEX opens it in **Settings → Plugins Hub**, or with the `hub` / `pluginhub` command.
 
 ## Layout
 
 ```
-plugins.json          <- the catalog AEX reads
-plugins/              <- the actual .aex plugin files
-  test.aex
+plugins.json              <- the catalog AEX reads
+plugins/                  <- the .aex plugin files
+  chatsound.aex
+  interactable.aex
+  MOMENTUM.aex
+  nanfling.aex
+  playercollision.aex
+  serverfinder.aex
+  sussy.aex
 README.md
 ```
 
@@ -21,36 +27,41 @@ Raw base URL used by AEX:
 {
   "Schema": 1,
   "Name": "AEX Plugins Hub",
-  "UpdatedAt": "2026-09-12",
-  "Notice": "Optional text shown at the bottom of the hub window.",
+  "UpdatedAt": "2026-09-14",
+  "Notice": "Shown for humans only, AEX ignores it for now.",
   "Plugins": [
     {
-      "Id": "test",              // unique, lowercase, no spaces (used as a key)
-      "Name": "Test Plugin",     // shown as the card title
-      "Author": "Sasha",         // shown as "by <author>"
-      "Version": "1.0.0",        // compared with the installed copy -> "Update"
-      "Category": "Example",     // filter chip in the hub
-      "Desc": "What it does.",   // 2 lines shown on the card
-      "File": "plugins/test.aex",// repo path OR a full https:// URL
-      "SaveAs": "test.aex",      // file name written into the exploit workspace (optional, defaults to File's name)
-      "Icon": "",                // rbxassetid://123 or a https:// png/jpg (optional -> letter tile)
-      "Accent": "#6366F1",       // icon tile color (optional)
-      "Commands": ["test"]       // shown on the card, cosmetic only
+      "Id": "nsfw",              // unique key, used for the installed-version record
+      "Name": "NSFW",            // card title (and the letter tile)
+      "Author": "FoarteBine",    // "by <author>" on the card
+      "Version": "1.0.0",        // bump this to push an Update to everyone
+      "Category": "Animation",   // becomes a filter chip
+      "Desc": "Sussy anims",     // card description
+      "File": "plugins/sussy.aex",   // repo path OR a full http(s) URL
+      "SaveAs": "nsfw.aex",          // file name written into the exploit workspace
+      "Icon": "",                // rbxassetid://123 or http(s) png/jpg -> else letter tile
+      "Accent": "#FF4081",       // letter tile color
+      "Commands": ["stopall", "annoy"]  // first 3 shown on the card, all searchable
     }
   ]
 }
 ```
 
-AEX reads `Plugins` (falls back to `plugins` / `Items`), so key order/extra fields are fine.
-Unknown/absent fields just degrade: no icon → colored tile with the first letter, no version → `1.0`.
+AEX reads `Plugins` (falls back to `plugins` / `Items` / a bare array), extra fields are ignored.
+Missing/absent values degrade gracefully: no icon → colored tile with the first letter, no version → `1.0`, no `SaveAs` → the file name from `File`.
 
-## Adding a plugin
+### Rules that actually matter
 
-1. Drop the file into `plugins/` (must be a valid AEX/IY plugin table — see `plugins/test.aex`).
-2. Add an entry to `Plugins` in `plugins.json`, bump its `Version`, update `UpdatedAt`.
-3. Commit. Raw GitHub caches up to ~5 minutes; the hub's **Refresh** button cache-busts the catalog.
+- **`File` must match the repo path exactly, including case** — raw.githubusercontent.com is
+  case sensitive and does not follow redirects, so `plugins/momentum.aex` ≠ `plugins/MOMENTUM.aex`
+  (that one 404s and the hub reports "could not download").
+- Prefer plain file names (`a-z 0-9 _ - .`): spaces and parentheses have to be URL-encoded
+  (`ServerFinder (VersionBackUp).aex` is a bad name for a raw link).
+- `Version` is what the Update button compares against `aex_hub_state.json` (the version AEX
+  installed for that `Id`), so keep bumping it when a plugin file changes.
+- `Id` should stay stable: it is the key of the installed-version record.
 
-Plugin file format expected by AEX's `LoadPlugin`:
+## Plugin file format (what `LoadPlugin` expects)
 
 ```lua
 return {
@@ -66,10 +77,19 @@ return {
 }
 ```
 
-## Notes
+`Commands` may be omitted (a plugin can also just run code on load). If several plugins register
+the same command name, AEX appends a number (`mycmd1`), so a plugin may silently get renamed —
+check the autocomplete list in Settings if a command "does nothing".
 
-- Installing writes `SaveAs` (or the file name from `File`) into the exploit's workspace folder,
-  then calls `addPlugin` — the plugin appears in **Settings → Manage Plugins** and is reloaded on
-  every launch from `AEX_FE.aex` settings.
-- AEX only downloads icon images when the bytes really are PNG/JPEG/GIF/BMP (WebP is not rendered
-  by `ImageLabel`), otherwise it keeps the letter tile.
+## Adding a plugin
+
+1. Drop the file into `plugins/`.
+2. Add an entry to `Plugins` in `plugins.json` and update `UpdatedAt`.
+3. Commit. The hub's **Refresh** button and every download cache-bust with `?cb=<time>`, but
+   GitHub's own CDN can still hold an object for a few minutes.
+
+## Icons
+
+AEX only accepts icon bytes that really are PNG/JPEG/GIF/BMP (checked by magic bytes —
+`ImageLabel` cannot render WebP) and caches them as `aex/assets/hub_<Id>.<ext>`.
+If the icon changes, change its URL/`Id` or delete that cached file.
