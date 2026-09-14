@@ -1,0 +1,21 @@
+{
+  "Schema": 1,
+  "Name": "AEX Plugins Hub",
+  "UpdatedAt": "2026-09-12",
+  "Notice": "Plugins run arbitrary Lua. Install only what you trust.",
+  "Plugins": [
+    {
+      "Id": "test",
+      "Name": "Test Plugin",
+      "Author": "Sasha",
+      "Version": "1.0.0",
+      "Category": "Example",
+      "Desc": "Minimal example plugin - prints Hello World and shows a notification.",
+      "File": "plugins/test.aex",
+      "SaveAs": "test.aex",
+      "Icon": "",
+      "Accent": "#6366F1",
+      "Commands": ["test", "helloworld", "hubtest"]
+    }
+  ]
+}
